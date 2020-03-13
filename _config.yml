@@ -100,8 +100,8 @@ theme: archer
 deploy:
   type: git
   repo: 
-    github: git@github.com:HongFengLuoYe/good.git
-    #hexo: git@47.104.153.138:/home/git/hexo.git,master
+    github: git@github.com:HongFengLuoYe/HongFengLuoYe.github.io.git
+    hexo: git@47.104.153.138:/home/git/hexo.git,master
 
   ## archer theme sidebar
   jsonContent:
