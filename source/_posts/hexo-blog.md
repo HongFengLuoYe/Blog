@@ -141,7 +141,7 @@ https://github.com/fi3ework/hexo-theme-archer
 进入博客目录，安装该插件。
 
 ```
-npm install https://github.com/CodeFalling/hexo-asset-image –save
+npm install https://github.com/CodeFalling/hexo-asset-image --save
 ```
 
 修改_config.yml文件，post_asset_folder:改为true。
@@ -378,6 +378,103 @@ encrypt: # hexo-blog-encrypt
 ![](hexo-blog/Snip20200308_33.png)
 
 具体信息参考：[**HFY主页**](https://github.com/HongFengLuoYe/HongFengLuoYe.github.io)
+
+# iPhone使用
+
+## 手机越狱
+### checkra1n
+![](hexo-blog/Snip20200313_44.png)
+> 网址：https://checkra.in/
+
+### 安装NewTerm 2
+![](hexo-blog/Snip20200313_45.png)
+这个是一个手机终端软件，越狱后，使用越狱商店cydia添加源：`http://apt.cydiabc.top/` ，搜索NewTerm2安装。
+##  准备工作
+### 安装OpenSSH
+![](hexo-blog/Snip20200313_46.png)
+* 在手机终端操作，效率太低，OpenSSH可以通SSH连接电脑操作，同上面一样，安装OpenSSH。打开终端工具，输入：
+
+```
+$ ssh root@192.168.0.104
+```
+* 其中ip地址是你手机WiFi地址，要保证手机与电脑处于同一个频段的WiFi下，这是会提示你输入密码连接。
+
+> 1.输入默认密码`alpine`（不会明文显示）。
+> 2.输入命令：`su` 回车取得root权限。
+> 3.输入：`passwd root`，更改root帐户的密码。
+> 4.输入新密码（无明文显示）。
+> 5.输入`passwd mobile`，更改mobile帐户的密码。
+> 6.重新输入新密码。
+### Git
+![](hexo-blog/Snip20200313_47.png)
+* 好了，修改完密码，可以在电脑端给手机安装Git了。
+
+```
+$ sudo apt-get update
+$ sudo apt-get install git
+```
+
+* 通过键入git --version以下命令来验证安装是否成功：
+
+```
+$ git --version
+$ git version 2.9.2
+```
+
+* 使用以下命令配置您的Git用户名和电子邮件，用您自己的名字代替Emma的名字。这些详细信息将与您创建的所有提交相关联：
+
+```
+$ git config --global user.email "1070386120@qq.com"
+$ git config --global user.name "Lili"
+
+```
+### Node.js
+![](hexo-blog/Snip20200313_48.png)
+安装Node.js，它自带npm包管理。
+
+
+```
+$ apt-get install nodejs
+
+#查看node版本
+$ node --version
+v6.3.0
+
+#查看npm版本
+$ npm  --version
+3.10.3
+```
+
+## 安装
+### 安装hexo
+![](hexo-blog/Snip20200313_50.png)
+因为iOS属于ARM架构的Darwin系统，所以JS的代码和Mac上是有区别的，需要重新安装hexo。我在iPhone的根目录下，新建了一个home文件，给了所有权限。这个文件里面安装了hexo。
+
+```
+$ mkdir home
+$ cd home
+$ mkdir Blog
+$ cd Blog
+```
+安装hexo的代码和Mac上一样，只是他在拉取的时候，会自动拉取手机平台的。
+
+```
+$ npm install -g hexo-cli
+$ hexo init <folder>
+```
+安装完成后，可以生产网站预览下，命令和之前一样`hexo g`与`hexo s`，在手机端的浏览器打开网址：`http://localhost:4000/`,就可以看见生成的博客了。
+### 安装主题
+![](hexo-blog/Snip20200313_51.png)
+主题的思路是这样的，先去拉取官方的，按照上面主题的配置方法，然后再去做暴力替换：
+> 首先备份 archer 下所有你自定义过的文件（包括 _config.yml 和 source 文件夹下添加的文件等），然后删除 archer，再重新安装，最后将备份的文件替换到原来的位置即可。
+
+这里插句话：文件传输我用微信，文件管理用[**Filza**](https://www.abcydia.com/read-16560.html)。
+
+### 导入markdwon资源
+![](hexo-blog/Snip20200313_53.png)
+把电脑端的source文件导入进来，生成网站就可以了。
+
+> **试了很多次一键部署都没有成功，因为Unix的限制，接下来想通push脚本去做部署，等待更新吧。。。**
 
 > **感谢以下博客：**
 > [leehoward](https://leehoward.cn/)
