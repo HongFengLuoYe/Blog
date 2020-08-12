@@ -1,5 +1,5 @@
 ---
-title: 博客工具Hexo的安装、使用和部署
+title: hexo-blog
 date: 2020-03-04 08:39:32
 tags: Blog
 archive: 2020
@@ -138,6 +138,8 @@ https://github.com/fi3ework/hexo-theme-archer
 https://github.com/fi3ework/hexo-theme-archer
 ```
 ## 本地图片加载
+
+
 进入博客目录，安装该插件。
 
 ```
@@ -149,6 +151,8 @@ npm install https://github.com/CodeFalling/hexo-asset-image --save
 ```
 post_asset_folder: true
 ```
+
+###  第一种方法
 完成后新建md会生成同名文件，在md中引用图片就行。
 ![](hexo-blog/Snip20200305_22.png)
 
@@ -157,6 +161,11 @@ post_asset_folder: true
 ```
 ![](hexo-blog/Snip20200305_22.png)
 ```
+
+### 第二种方法
+在mweb中可以直接插入本地图片，例如
+![](media/15972524335510.jpg)
+需要将media中的图片复制一份到md会生成同名文件夹中，然后再生成。
 
 # 部署到阿里云
 先搞明白Hexo博客从搭建到自动发布的架构，才能更好的理解我们每一步进行的操作。不然只跟着步骤过了一遍，却不知道为什么这么做。

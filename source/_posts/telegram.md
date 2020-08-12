@@ -1,10 +1,10 @@
 ---
 title: Telegram
 date: 2020-03-18 07:07:39
-tags: 通讯
+tags: Network
 archive: 2020   
-category: 网络技术
-password: lizhangjunshigehaoren
+category: 计算机
+password: lizhangjun8
 abstract: 有东西被加密了, 请输入密码查看.
 message: 您好, 这里需要密码.
 wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
