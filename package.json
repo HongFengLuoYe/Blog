@@ -12,7 +12,7 @@
     "version": "4.2.0"
   },
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "hexo": "^4.2.0",
     "hexo-asset-image": "git+https://github.com/fulsun/hexo-asset-image-master.git",
     "hexo-blog-encrypt": "^3.0.12",
